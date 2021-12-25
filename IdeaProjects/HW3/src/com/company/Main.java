@@ -7,8 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-
-        NewArr newArr = new NewArr (new int[20]);
+        NewArr newArr = new NewArr(new int[20]);
         newArr.evenNumbers();
         newArr.randomNumbers();
         newArr.value();

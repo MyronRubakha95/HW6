@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class NewArr {
- public int [] array;
+    public int[] array;
 
 
     public NewArr(int[] array) {

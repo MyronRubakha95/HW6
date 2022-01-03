@@ -1,14 +1,19 @@
 package com.company;
 
-public class Vertices3D {
+public class Point {
     private double x;
     private double y;
     private double z;
 
-    public Vertices3D(double x, double y, double z) {
+    public Point(double x, double y, double z) {
         this.x = x;
         this.y = y;
         this.z = z;
+    }
+
+    public Point(double x, double y) {
+        this.x = x;
+        this.y = y;
     }
 
     public double getX() {
@@ -37,10 +42,17 @@ public class Vertices3D {
 
     @Override
     public String toString() {
-        return "Vertices3D{" +
-                "x=" + x +
-                ", y=" + y +
-                ", z=" + z +
-                '}';
+        if (z == 0) {
+            return "Point{" +
+                    "x=" + x +
+                    ", y=" + y +
+                    '}';
+        } else {
+            return "Point{" +
+                    "x=" + x +
+                    ", y=" + y +
+                    ", z=" + z +
+                    '}';
+        }
     }
 }

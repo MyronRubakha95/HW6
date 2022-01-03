@@ -3,36 +3,54 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        Triangle trianglePerimeter = new Triangle(2, 2);
-        Triangle triangleArea = new Triangle(2, 2);
+        Shape[] shape = new Shape[6];
 
-        System.out.println("Периметр трикутника = " + trianglePerimeter.getPerimeter());
-        System.out.println("Площа трикутника = " + triangleArea.getArea());
 
-        Rectangle rectanglePerimeter = new Rectangle(25, 50);
-        Rectangle rectangleArea = new Rectangle(25, 50);
-        System.out.println("Периметр прямокутника = " + rectanglePerimeter.getPerimeter());
-        System.out.println("Площа прямокутника = " + rectangleArea.getArea());
+        Point[] PointTriangel = new Point[3];
 
-        Circle circlePerimeter = new Circle(25, 0);
-        Circle circleArea = new Circle(25, 0);
-        System.out.println("Периметр круга = " + circlePerimeter.getPerimeter());
-        System.out.println("Площа круга = " + circleArea.getArea());
+        PointTriangel[0] = new Point(5, 3);
+        PointTriangel[1] = new Point(4, 2);
+        PointTriangel[2] = new Point(5, 0);
+        Triangle triangle = new Triangle(PointTriangel);
+        triangle.getPerimeter();
+        triangle.getArea();
+        System.out.println(triangle);
 
-        SquarePyramid squarePyramidArea = new SquarePyramid(20, 20, 0);
-        SquarePyramid squarePyramidVolume = new SquarePyramid(20, 20, 0);
-        System.out.println("Площа піраміди = " + squarePyramidArea.getArea());
-        System.out.println("Об'єм піраміди = " + squarePyramidVolume.getVolume());
 
-        Cuboid cuboidArea = new Cuboid(10, 20, 30);
-        Cuboid cuboidVolume = new Cuboid(5, 6, 7);
-        System.out.println("Площа куба = " + cuboidArea.getArea());
-        System.out.println("Об'єм куба = " + cuboidVolume.getVolume());
+        Point[] PointRectangel = new Point[1];
+        PointRectangel[0] = new Point(1, 3);
+        Rectangle rectangle = new Rectangle(PointRectangel, 5, 3);
+        rectangle.getPerimeter();
+        rectangle.getArea();
+        System.out.println(rectangle);
 
-        Sphere sphereArea = new Sphere(20, 0, 0);
-        Sphere sphereVolune = new Sphere(10, 0, 0);
-        System.out.println("Площа сфери = " + sphereArea.getArea());
-        System.out.println("Об'єм сфери = " + sphereVolune.getVolume());
 
+        Point[] PointCircle = new Point[1];
+        PointCircle[0] = new Point(2, 3);
+        Circle circle = new Circle(PointCircle, 5);
+        circle.getArea();
+        circle.getPerimeter();
+        System.out.println(circle);
+
+        Point[] PointPyramid = new Point[1];
+        PointPyramid[0] = new Point(10, 5, 6);
+        SquarePyramid squarePyramid = new SquarePyramid(PointPyramid, 2, 3);
+        squarePyramid.getArea();
+        squarePyramid.getVolume();
+        System.out.println(squarePyramid);
+
+        Point[] PointCuboid = new Point[1];
+        PointCuboid[0] = new Point(5, 6, 7);
+        Cuboid cuboid = new Cuboid(PointCuboid, 5, 6, 6);
+        cuboid.getVolume();
+        cuboid.getArea();
+        System.out.println(cuboid);
+
+        Point[] PointSphere = new Point[1];
+        PointSphere[0] = new Point(5, 6, 7);
+        Sphere sphere = new Sphere(PointSphere, 8);
+        sphere.getArea();
+        sphere.getVolume();
+        System.out.println(sphere);
     }
 }

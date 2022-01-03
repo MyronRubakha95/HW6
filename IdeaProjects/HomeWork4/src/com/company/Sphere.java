@@ -1,23 +1,34 @@
 package com.company;
 
-public class Sphere extends SpaceShape implements AreaMeasurable, VolumeMeasurable {
+public class Sphere extends SpaceShape {
+    private double radius;
+    private double area;
+    private double volume;
 
+    public Sphere(Point[] vertices, double radius) {
+        super(vertices);
+        this.radius = radius;
 
-    private double radius = getX();
-
-
-    public Sphere(double x, double y, double z) {
-        super(x, y, z);
     }
 
     @Override
     public double getArea() {
-        return 4 * Math.PI * radius * radius;
+        area = 4 * Math.PI * radius * radius;
+        return area;
     }
 
     @Override
     public double getVolume() {
-        return Math.PI * Math.pow(radius, 3) * 4 / 3;
+        volume = Math.PI * Math.pow(radius, 3) * 4 / 3;
+        return volume;
     }
 
+    @Override
+    public String toString() {
+        return "Sphere{" +
+                "radius=" + radius +
+                ", area=" + area +
+                ", volume=" + volume +
+                '}';
+    }
 }

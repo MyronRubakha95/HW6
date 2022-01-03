@@ -1,19 +1,37 @@
 package com.company;
 
-public class Rectangle extends PlaneShape implements PerimeterMeasurable, AreaMeasurable {
+public class Rectangle extends PlaneShape {
+    private double perimeter;
+    private double area;
+    private double width;
+    private double height;
 
-
-    public Rectangle(double x, double y) {
-        super(x, y);
+    public Rectangle(Point[] vertices, double width, double height) {
+        super(vertices);
+        this.width = width;
+        this.height = height;
     }
 
     @Override
     public double getPerimeter() {
-        return (getX() + getY()) * 2;
+        perimeter = (height + width) * 2;
+        return perimeter;
     }
+
 
     @Override
     public double getArea() {
-        return getX() * getY();
+        area = height * width;
+        return area;
+    }
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "perimeter=" + perimeter +
+                ", area=" + area +
+                ", width=" + width +
+                ", height=" + height +
+                '}';
     }
 }

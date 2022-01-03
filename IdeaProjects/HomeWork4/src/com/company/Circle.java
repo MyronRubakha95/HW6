@@ -1,19 +1,33 @@
 package com.company;
 
-public class Circle extends PlaneShape implements PerimeterMeasurable, AreaMeasurable {
+public class Circle extends PlaneShape {
+    private double radius;
+    private double perimeter;
+    private double area;
 
-
-    public Circle(double x, double y) {
-        super(x, y);
+    public Circle(Point[] vertices, double radius) {
+        super(vertices);
+        this.radius = radius;
     }
 
     @Override
     public double getPerimeter() {
-        return 2 * Math.PI * getX();
+        perimeter = 2 * Math.PI * radius;
+        return perimeter;
     }
 
     @Override
     public double getArea() {
-        return Math.PI * getX() * getX();
+        area = Math.PI * radius * radius;
+        return area;
+    }
+
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "radius=" + radius +
+                ", perimeter=" + perimeter +
+                ", area=" + area +
+                '}';
     }
 }

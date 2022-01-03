@@ -1,31 +1,40 @@
 package com.company;
 
-public class Cuboid extends SpaceShape implements AreaMeasurable, VolumeMeasurable {
-    private double height = getX();
-    private double weight = getY();
-    private double depth = getZ();
+public class Cuboid extends SpaceShape {
+    private double width;
+    private double height;
+    private double depth;
+    private double area;
+    private double volume;
 
-    public Cuboid(double x, double y, double z) {
-        super(x, y, z);
+    public Cuboid(Point[] vertices, double width, double height, double depth) {
+        super(vertices);
+        this.width = width;
+        this.height = height;
+        this.depth = depth;
+
     }
 
     @Override
     public double getArea() {
-        return 2 * (weight * depth + weight * height + depth * height);
+        area = 2 * (width * depth + width * height + depth * height);
+        return area;
     }
 
     @Override
     public double getVolume() {
-        return height * weight * depth;
-
+        volume = height * width * depth;
+        return volume;
     }
 
     @Override
     public String toString() {
         return "Cuboid{" +
-                "height=" + height +
-                ", weight=" + weight +
+                "width=" + width +
+                ", height=" + height +
                 ", depth=" + depth +
+                ", area=" + area +
+                ", volume=" + volume +
                 '}';
     }
 }

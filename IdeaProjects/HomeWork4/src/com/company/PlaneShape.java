@@ -1,9 +1,20 @@
 package com.company;
 
-public class PlaneShape extends Vertices2D {
 
+public abstract class PlaneShape extends Shape implements AreaMeasurable, PerimeterMeasurable {
 
-    public PlaneShape(double x, double y) {
-        super(x, y);
+    public PlaneShape(Point[] vertices) {
+        super(vertices);
+
+    }
+
+    @Override
+    public double getArea() {
+        return 0;
+    }
+
+    @Override
+    public double getPerimeter() {
+        return 0;
     }
 }

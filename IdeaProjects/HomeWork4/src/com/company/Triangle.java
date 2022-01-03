@@ -1,20 +1,35 @@
 package com.company;
 
-public class Triangle extends PlaneShape implements PerimeterMeasurable, AreaMeasurable {
+import java.util.Arrays;
 
+public class Triangle extends PlaneShape {
+    private double perimeter;
+    private double area;
 
-    public Triangle(double x, double y) {
-        super(x, y);
+    public Triangle(Point[] vertices) {
+        super(vertices);
     }
+
 
     @Override
     public double getPerimeter() {
-        return getX() + getY() + getX();
+        perimeter = distance(getVertices()[0], getVertices()[1]) + distance(getVertices()[1], getVertices()[2]) + distance(getVertices()[0], getVertices()[2]);
+        return perimeter;
     }
-
 
     @Override
     public double getArea() {
-        return (getX() + getX()) * getY();
+        double p = perimeter / 2;
+        area = Math.sqrt(p * (p - distance(getVertices()[0], getVertices()[1])) * (p - distance(getVertices()[1], getVertices()[2])) * (p - distance(getVertices()[0], getVertices()[2])));
+        return area;
+    }
+
+    @Override
+    public String toString() {
+        return "Triangle{" +
+                "vertices=" + Arrays.toString(vertices) +
+                ", perimeter=" + perimeter +
+                ", area=" + area +
+                '}';
     }
 }
